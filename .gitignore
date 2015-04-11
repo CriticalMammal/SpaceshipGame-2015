@@ -4,7 +4,8 @@ bin-debug/
 bin-release/
 
 # Other files and folders
-audio/
+audio/*
+!audio/final/
 *.swf
 
 # =========================
