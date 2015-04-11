@@ -45,7 +45,8 @@ package src
 			var textMessages = ["Israel cuts funding on tri-state refugee space transportation to enter light speed race", 
 								"Flight time to break light barrier is estimated roughly 4 years on-craft",
 								"70 years relative Earth time",
-								"Palestinian-Isreal sacred airspace bridge program on hold"];
+								"Palestinian-Isreal sacred airspace bridge program on hold",
+								" "];
 			var frameCt = 0;
 			var introMessageCt = 0;
 
