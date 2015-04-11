@@ -39,6 +39,16 @@ package src
 		public function intro()
 		{
 			sceneFinished = false;
+			var introText:IntroText = new IntroText();
+			addChild(introText);
+			var introTextDelay:int = 4*stageRef.frameRate;
+			var textMessages = ["Israel cuts funding on tri-state refugee space transportation to enter light speed race", 
+								"Flight time to break light barrier is estimated roughly 4 years on-craft",
+								"70 years relative Earth time",
+								"Palestinian-Isreal sacred airspace bridge program on hold"];
+			var frameCt = 0;
+			var introMessageCt = 0;
+
 			addEventListener(Event.ENTER_FRAME, introLoop, false, 0, false);
 
 			function introLoop(event:Event)
@@ -46,9 +56,22 @@ package src
 				if (!sceneFinished)
 				{
 					// do intro scene text
-					// cut to black
-					// remove content
-					sceneFinished = true;
+					if (frameCt >= introTextDelay)
+					{
+						introMessageCt ++;
+						if (introMessageCt >= textMessages.length)
+						{
+							introMessageCt = textMessages.length;
+							removeChild(introText);
+							sceneFinished = true;
+						}
+						else
+						{
+							introText.message.text = textMessages[introMessageCt];
+						}
+						frameCt = 0;
+					}
+					frameCt++;
 				}
 				else
 				{
@@ -73,7 +96,6 @@ package src
 				if (!sceneFinished)
 				{
 					cockpit.x ++;
-					//trace(cockpit.x);
 					
 					if (cockpit.x > 500)
 					{
