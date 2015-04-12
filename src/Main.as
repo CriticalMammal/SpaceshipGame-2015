@@ -87,6 +87,8 @@ package src
 		public function lightBarrier()
 		{
 			sceneFinished = false;
+			var starField:Starfield = new Starfield();
+			addChild(starField);
 			var cockpit:Cockpit = new Cockpit();
 			addChild(cockpit);
 
