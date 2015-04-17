@@ -1,0 +1,22 @@
+package src
+{
+	import flash.display.Sprite;
+	import flash.media.Sound;
+	import flash.media.SoundChannel;
+	import flash.media.SoundTransform;
+	import flash.media.SoundMixer;
+	
+	public class AudioHandler extends Sprite
+	{
+		public var shipAmbience:Sound = new shipAmbienceSound();
+		public var shipAmbienceChannel:SoundChannel = new SoundChannel();
+		public var shipAmbienceTransform = new SoundTransform();
+
+		public function AudioHandler()
+		{
+			shipAmbienceTransform.volume = 0.5;
+			shipAmbienceChannel.soundTransform = shipAmbienceTransform;
+			//shipAmbienceChannel = shipAmbienceSound.play(0, 1, shipAmbienceTransform);
+		}
+	}
+}
